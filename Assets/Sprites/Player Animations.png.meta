@@ -78,6 +78,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -427,7 +428,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 51bc8d414ba909b10800000000000000
-      internalID: 1986257533904931605
+      internalID: 7820167285416679045
       vertices: []
       indices: 
       edges: []
@@ -484,6 +485,21 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Player Walk 2: 6295646634182546331
+      Player Walk 3: -7160028011233644513
+      Player Take Damage: -5473762985218043855
+      Player Walk 1: -6896002891788505864
+      Player idle 1: -118600554804476006
+      Player Animations_8: 7307447744573620111
+      Player Jump 2: -1374829811348817755
+      Bullet: 4926189681198663769
+      Player Walk 4: 7069872953290273360
+      Player Jump 1: -5692317478596498235
+      Box: 7820167285416679045
+      Player Dead: -1954295289860711922
+      Player Idle 2: 7427744393092780528
+      Finish: -6463605044664943714
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

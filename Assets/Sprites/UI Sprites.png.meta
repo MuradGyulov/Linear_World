@@ -66,6 +66,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -472,6 +473,21 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      UI Heart Icon: -5074204316161107556
+      Play Button: -1917645574668646267
+      UI Bullet Icon: 915768003812156625
+      Settings Button: -7825288337103111108
+      Menu Button: -6814301672687594596
+      UI Empty Heart Icon: -83225335990861157
+      Sounds Slider Button: 1072105703770310030
+      Pause Button: -2315737742614237131
+      Slider Fill 0: -4503910754961811714
+      Slider Fill 1: 4387293762826225777
+      Button: 5770847696828733620
+      Repeat Button: -8125560870492236162
+      Music Slider Button: -621690778083816895
+      Chanel Button: 4259666535914144692
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

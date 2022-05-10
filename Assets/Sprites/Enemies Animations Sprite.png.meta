@@ -123,6 +123,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -802,6 +803,34 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Gost Move 3: -5975439378715536392
+      Chicken Take Damage 1: -6619720388160594510
+      Fly Take Damage 1: 2637449108335551521
+      Snake Move 3: 5220398164738052009
+      Gost Move 1: 3171164426564939732
+      Snake Take Damage 2: -6645462101470955148
+      Fly 3: 387626539416292909
+      Gost Move 2: 3929938554575297882
+      Gost Take Damage 1: -5602679188304920771
+      Snag idle 1: -7700988534935389038
+      Snake Move 2: -8773579444707970640
+      Snake Take Damage 1: -3448332399298420513
+      Chicken Fly 3: -555725018773790936
+      Fly 4: 5793477869954139657
+      Gost Move 4: 7188785134700335947
+      Chicken Take Damage 2: -4335727294835574596
+      Snag idle 2: 6650836058459332681
+      Fly 2: 6823755048904794377
+      Snake Move 4: 732980110473929933
+      Chicken Fly 2: -8147712359956582991
+      Snake Move 1: 5653521494573768630
+      Chicken Fly 1: -5773729051657053766
+      Snag Take Damage 2: 1491374096847556428
+      Fly Take Damage 2: 7336733932826291448
+      Gost Take Damage 2: 5578235193008507640
+      Snag Take Damage 1: -4577733925124117427
+      Fly 1: 5487972188290175346
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
