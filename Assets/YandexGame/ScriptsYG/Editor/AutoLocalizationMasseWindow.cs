@@ -7,7 +7,7 @@ namespace YG
 {
     public class AutoLocalizationMasse : EditorWindow
     {
-        [MenuItem("YG/Localization/Auto Localization Masse")]
+        [MenuItem("Tools/PluginYG/Localization/Auto Localization Masse")]
         public static void ShowWindow()
         {
             GetWindow<AutoLocalizationMasse>("Auto Localization Masse");
@@ -131,7 +131,7 @@ namespace YG
             }
             else
             {
-                GUILayout.Label("Выберите Autolocation Inspector в настройках плагина\nInfoYG -> Translate Metod -> AutoLocalization", GUILayout.ExpandWidth(true));
+                GUILayout.Label("Select Auto Location Inspector in the plugin settings\nInfoYG -> Translate Metod -> AutoLocalization", GUILayout.ExpandWidth(true));
             }
         }
     }

@@ -22,14 +22,21 @@ namespace YG
         public string ru, en, tr, az, be, he, hy, ka, et, fr, kk, ky, lt, lv, ro, tg, tk, uk, uz, es, pt, ar, id, ja, it, de, hi;
         public int fontNumber;
         public Font uniqueFont;
+        int baseFontSize;
 
-        // Раскомментируйте нижние строки, если вы получаете какие-либо ошибки связанные с infoYG. В каких то случаях, это может помочь.
-        // Uncomment the bottom lines if you get any errors related to infoYG. In some cases, it may help.
-        //private void Start()
-        //{
-        //    Serialize();
-        //}
+        private void Awake()
+        {
+            // Раскомментируйте нижнюю строку, если вы получаете какие-либо ошибки связанные с InfoYG. В каких то случаях, это может помочь.
+            // Uncomment the bottom line if you get any errors related to infoYG. In some cases, it may help.
+            //Serialize();
 
+            if (textUIComponent)
+                baseFontSize = textUIComponent.fontSize;
+            else if (textMeshComponent)
+                baseFontSize = textMeshComponent.fontSize;
+        }
+
+        [ContextMenu("Reserialize")]
         public void Serialize()
         {
             textUIComponent = GetComponent<Text>();
@@ -42,6 +49,7 @@ namespace YG
             YandexGame.SwitchLangEvent += SwitchLanguage;
             SwitchLanguage(YandexGame.savesData.language);
         }
+
         private void OnDisable() => YandexGame.SwitchLangEvent -= SwitchLanguage;
 
         public void SwitchLanguage(string lang)
@@ -50,13 +58,14 @@ namespace YG
             {
                 if (lang == infoYG.LangName(i))
                 {
-                    AssignTranslate(languages[i], infoYG.LangName(i));
+                    AssignTranslate(languages[i]);
                     ChangeFont(infoYG.GetFont(i));
+                    FontSizeCorrect(infoYG.GetFontSize(i));
                 }
             }
         }
 
-        void AssignTranslate(string translation, string lang)
+        void AssignTranslate(string translation)
         {
             if (textUIComponent)
                 textUIComponent.text = translation;
@@ -96,6 +105,22 @@ namespace YG
                     textUIComponent.font = font;
                 else if (textMeshComponent)
                     textMeshComponent.font = font;
+            }
+        }
+
+        void FontSizeCorrect(int[] fontSizeArray)
+        {
+            if (textUIComponent)
+                textUIComponent.fontSize = baseFontSize;
+            else if (textMeshComponent)
+                textMeshComponent.fontSize = baseFontSize;
+
+            if (fontSizeArray.Length != 0 && fontSizeArray.Length >= fontNumber - 1)
+            {
+                if (textUIComponent)
+                    textUIComponent.fontSize += fontSizeArray[fontNumber];
+                else if (textMeshComponent)
+                    textMeshComponent.fontSize += fontSizeArray[fontNumber];
             }
         }
 
@@ -201,7 +226,8 @@ namespace YG
                 return null;
             }
 
-            var url = String.Format("http://translate.google.cn/translate_a/single?client=gtx&dt=t&sl={0}&tl={1}&q={2}", "auto", translationTo, WebUtility.UrlEncode(text));
+            var url = String.Format("http://translate.google." + infoYG.domainAutoLocalization + "/translate_a/single?client=gtx&dt=t&sl={0}&tl={1}&q={2}",
+                "auto", translationTo, WebUtility.UrlEncode(text));
             UnityWebRequest www = UnityWebRequest.Get(url);
             www.SendWebRequest();
             while (!www.isDone)

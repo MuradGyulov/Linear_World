@@ -2,17 +2,17 @@ mergeInto(LibraryManager.library,
 {
 	AuthorizationCheck: function (playerPhotoSize, scopes)
 	{
-		AuthorizationCheck(Pointer_stringify(playerPhotoSize), scopes);
+		AuthorizationCheck(UTF8ToString(playerPhotoSize), scopes);
 	},
 	
 	OpenAuthDialog: function (playerPhotoSize, scopes)
 	{
-		OpenAuthDialog(Pointer_stringify(playerPhotoSize), scopes);
+		OpenAuthDialog(UTF8ToString(playerPhotoSize), scopes);
 	},
 	
 	SaveYG: function (jsonData, flush)
 	{
-		SaveCloud(Pointer_stringify(jsonData), flush);
+		SaveCloud(UTF8ToString(jsonData), flush);
 	},
 	
 	LoadYG: function ()
@@ -27,12 +27,12 @@ mergeInto(LibraryManager.library,
 	
 	SetLeaderboardScores: function (nameLB, score)
 	{
-		SetLeaderboardScores(Pointer_stringify(nameLB), score);
+		SetLeaderboardScores(UTF8ToString(nameLB), score);
 	},
 	
 	GetLeaderboardScores: function (nameLB, maxPlayers, quantityTop, quantityAround, photoSizeLB, auth)
 	{
-		GetLeaderboardScores(Pointer_stringify(nameLB), maxPlayers, quantityTop, quantityAround, Pointer_stringify(photoSizeLB), auth);
+		GetLeaderboardScores(UTF8ToString(nameLB), maxPlayers, quantityTop, quantityAround, UTF8ToString(photoSizeLB), auth);
 	},
 
 	FullAdShow: function ()
@@ -45,7 +45,7 @@ mergeInto(LibraryManager.library,
 		RewardedShow(id);
 	},
 	
-	LanguageRequest: function ()
+	LanguageRequestInternal: function ()
 	{
 		LanguageRequest();
 	},
@@ -55,7 +55,7 @@ mergeInto(LibraryManager.library,
 		RequestingEnvironmentData();
 	},	
 
-	Review: function()
+	ReviewInternal: function()
 	{
 		Review();
 	},
@@ -70,113 +70,37 @@ mergeInto(LibraryManager.library,
 		ActivityRTB2(state);
 	},
 	
-	ActivityRTB3: function(state)
+	ExecuteCodeRTB1: function()
 	{
-		ActivityRTB3(state);
+		ExecuteCodeRTB1();
 	},
 	
-	ActivityRTB4: function(state)
+	ExecuteCodeRTB2: function()
 	{
-		ActivityRTB4(state);
-	},
-	
-	ActivityRTB5: function(state)
-	{
-		ActivityRTB5(state);
-	},
-	
-	ActivityRTB6: function(state)
-	{
-		ActivityRTB6(state);
-	},
-	
-	RenderRTB1: function()
-	{
-		RenderRTB1();
-	},
-	
-	RenderRTB2: function()
-	{
-		RenderRTB2();
-	},
-	
-	RenderRTB3: function()
-	{
-		RenderRTB3();
-	},
-	
-	RenderRTB4: function()
-	{
-		RenderRTB4();
-	},
-	
-	RenderRTB5: function()
-	{
-		RenderRTB5();
-	},
-	
-	RenderRTB6: function()
-	{
-		RenderRTB6();
+		ExecuteCodeRTB2();
 	},
 	
 	RecalculateRTB1: function(_width, _height, _left, _top)
 	{
 		RecalculateRTB1(
-			Pointer_stringify(_width),
-			Pointer_stringify(_height),
-			Pointer_stringify(_left),
-			Pointer_stringify(_top));
+			UTF8ToString(_width),
+			UTF8ToString(_height),
+			UTF8ToString(_left),
+			UTF8ToString(_top));
 	},
 	
 	RecalculateRTB2: function(_width, _height, _left, _top)
 	{
 		RecalculateRTB2(
-			Pointer_stringify(_width),
-			Pointer_stringify(_height),
-			Pointer_stringify(_left),
-			Pointer_stringify(_top));
-	},
-	
-	RecalculateRTB3: function(_width, _height, _left, _top)
-	{
-		RecalculateRTB3(
-			Pointer_stringify(_width),
-			Pointer_stringify(_height),
-			Pointer_stringify(_left),
-			Pointer_stringify(_top));
-	},
-	
-	RecalculateRTB4: function(_width, _height, _left, _top)
-	{
-		RecalculateRTB4(
-			Pointer_stringify(_width),
-			Pointer_stringify(_height),
-			Pointer_stringify(_left),
-			Pointer_stringify(_top));
-	},
-	
-	RecalculateRTB5: function(_width, _height, _left, _top)
-	{
-		RecalculateRTB5(
-			Pointer_stringify(_width),
-			Pointer_stringify(_height),
-			Pointer_stringify(_left),
-			Pointer_stringify(_top));
-	},
-	
-	RecalculateRTB6: function(_width, _height, _left, _top)
-	{
-		RecalculateRTB6(
-			Pointer_stringify(_width),
-			Pointer_stringify(_height),
-			Pointer_stringify(_left),
-			Pointer_stringify(_top));
+			UTF8ToString(_width),
+			UTF8ToString(_height),
+			UTF8ToString(_left),
+			UTF8ToString(_top));
 	},
 	
 	PaintRBTInternal: function(rbt)
 	{
-		PaintRBT(Pointer_stringify(rbt));
+		PaintRBT(UTF8ToString(rbt));
 	},
 	
 	StaticRBTDeactivate: function()
@@ -186,7 +110,7 @@ mergeInto(LibraryManager.library,
 	
 	BuyPaymentsInternal: function(id)
 	{
-		BuyPayments(Pointer_stringify(id));
+		BuyPayments(UTF8ToString(id));
 	},
 	
 	GetPaymentsInternal: function()
@@ -196,7 +120,7 @@ mergeInto(LibraryManager.library,
 	
 	DeletePurchaseInternal: function(id)
 	{
-		DeletePurchase(Pointer_stringify(id));
+		DeletePurchase(UTF8ToString(id));
 	},
 	
 	DeleteAllPurchasesInternal: function()
@@ -207,6 +131,11 @@ mergeInto(LibraryManager.library,
 	PromptShowInternal: function()
 	{
 		PromptShow();
+	},
+	
+	StickyAdActivityInternal: function(show)
+	{
+		StickyAdActivity(show);
 	},
 	
 	GetURLFromPage: function () {
