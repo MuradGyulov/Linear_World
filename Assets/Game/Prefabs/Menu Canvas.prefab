@@ -4656,7 +4656,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Levels
+  m_Text: 
 --- !u!114 &1908014749
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5926,7 +5926,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4696155565333664652
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6637,6 +6637,8 @@ MonoBehaviour:
   musicSlider: {fileID: 936559624}
   soundsSlider: {fileID: 1508686433282063995}
   cameraSlider: {fileID: 3089612258625288141}
+  settingsText: {fileID: 6065903322803125951}
+  levelsText: {fileID: 1959393728}
   buttonsOfLevels:
   - {fileID: 299400308}
   - {fileID: 1781835179}
@@ -7092,7 +7094,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Settings
+  m_Text: 
 --- !u!114 &272155328
 MonoBehaviour:
   m_ObjectHideFlags: 0

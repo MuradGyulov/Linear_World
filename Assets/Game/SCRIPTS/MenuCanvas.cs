@@ -15,6 +15,9 @@ public class MenuCanvas : MonoBehaviour
     [SerializeField] private Slider soundsSlider;
     [SerializeField] private Slider cameraSlider;
     [Space(20)]
+    [SerializeField] private Text settingsText;
+    [SerializeField] private Text levelsText;
+    [Space(20)]
     [SerializeField] private Button[] buttonsOfLevels = new Button[19];
 
     private AudioSource audioSource;
@@ -42,7 +45,7 @@ public class MenuCanvas : MonoBehaviour
         menuCamera = GameObject.FindGameObjectWithTag("Menu Camera");
         mainMenuCamera = menuCamera.GetComponent<Camera>();
         mainMenuCamera.orthographicSize = YandexGame.savesData.cameraSize;
-        cameraSlider.value = YandexGame.savesData.cameraSize;
+        cameraSlider.value = YandexGame.savesData.cameraSize;   
     }
 
     public void OpenLevelsPanel()
@@ -54,11 +57,29 @@ public class MenuCanvas : MonoBehaviour
         {
             buttonsOfLevels[i].interactable = true;
         }
+
+        if (Application.systemLanguage == SystemLanguage.Russian)
+        {
+            levelsText.text = "Уровни".ToString();
+        }
+        else
+        {
+            levelsText.text = "Levels".ToString();
+        }
     }
 
     public void OpenSettingsPanel()
     {
         settingsPanel.SetActive(true);
+
+        if (Application.systemLanguage == SystemLanguage.Russian)
+        {
+            settingsText.text = "Настройки".ToString();
+        }
+        else
+        {
+            settingsText.text = "Settings".ToString();
+        }
     }
 
     public void LoadLevel(int sceneIndex)
